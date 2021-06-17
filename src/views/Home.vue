@@ -64,28 +64,32 @@
     </div>
 
     <div class="gallery">
-      <div>
-        <div class="gallery-images">
-          <div class="gallery-image">
-            <img src="@/assets/images/topmic-1.png" alt="image">
-          </div>
-          <div class="gallery-image">
-            <img src="@/assets/images/topmic-2.png" alt="image">
-          </div>
-          <div class="gallery-image">
-            <img src="@/assets/images/topmic-3.png" alt="image">
-          </div>
-          <div class="gallery-image">
-            <img src="@/assets/images/topmic-4.png" alt="image">
-          </div>
-          <div class="gallery-image">
-            <img src="@/assets/images/topmic-1.png" alt="image">
-          </div>
-          <div class="gallery-image">
-            <img src="@/assets/images/topmic-2.png" alt="image">
-          </div>
-        </div>
-      </div>
+      <carousel :perPageCustom="[[320, 2], [770, 5]]" :navigate-to="someLocalProperty" :mouse-drag="false">
+        <slide>
+          <img src="@/assets/images/topmic-1.png" alt="image">
+        </slide>
+        <slide>
+          <img src="@/assets/images/topmic-2.png" alt="image">
+        </slide>
+        <slide>
+          <img src="@/assets/images/topmic-3.png" alt="image">
+        </slide>
+        <slide>
+          <img src="@/assets/images/topmic-4.png" alt="image">
+        </slide>
+        <slide>
+          <img src="@/assets/images/topmic-1.png" alt="image">
+        </slide>
+        <slide>
+          <img src="@/assets/images/topmic-2.png" alt="image">
+        </slide>
+        <slide>
+          <img src="@/assets/images/topmic-3.png" alt="image">
+        </slide>
+        <slide>
+          <img src="@/assets/images/topmic-4.png" alt="image">
+        </slide>
+      </carousel>
     </div>
     <Footer />
   </div>
@@ -94,201 +98,16 @@
 <script>
 // @ is an alias to /src
 import Footer from '@/components/Footer.vue'
+import { Carousel, Slide } from 'vue-carousel';
 
 export default {
   name: 'Home',
   components: {
-    Footer
+    Footer,
+    Carousel,
+    Slide
   },
 }
 </script>
 
-<style lang="scss" scoped>
-.hero {
-  background: linear-gradient(
-      0deg,
-      rgba(1, 40, 63, 0.9),
-      rgba(1, 40, 63, 0.9),
-      rgba(1, 40, 63, 0.9)
-    ),url('../assets/girl-reading.jpg');
-  background-size: cover;
-  height: 600px;
-}
-.hero-text {
-  max-width: 800px;
-  p {
-    color: #ffffff;
-  }
-  .big-text {
-    font-size: 48px;
-    line-height: 58px;
-  }
-  .small-text {
-    text-transform: capitalize;
-  }
-}
-.reason {
-  // height: 700px;
-  background: linear-gradient(
-      0deg,
-      rgba(40, 3, 204, 0.9),
-      rgba(40, 3, 204, 0.9),
-      rgba(40, 3, 204, 0.9)
-    ),url('../assets/geometry-bg.jpg');
-  padding: 50px 100px;
-}
-.reason-container {
-  max-width: 1440px;
-  margin: auto;
-  justify-content: space-between;
-}
-.reason {
-  .reason-left {
-    h3 {
-      color: oldlace;
-      font-size: 48px;
-      max-width: 500px;
-    }
-    p {
-      color: oldlace;
-      font-size: 24px;
-      max-width: 600px;
-    }
-  .reason-section{
-    .reason-div {
-      background: #ffffff;
-      border-radius: 50px;
-      max-width: 500px;
-      svg {
-        width: 40px;
-      }
-      span {
-        font-weight: 600;
-        font-size: 24px;
-
-      }
-      .svg-1 {
-        fill: #a5c347;
-      }
-      .svg-2 {
-        fill: #00d2dc;
-      }
-      .svg-3 {
-        fill: #ff236c;
-      }
-    }
-  }
-  }
-}
-.school-grade {
-  max-width: 1280px;
-  margin: auto;
-  padding: 100px 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 30px;
-  .grade-1 {
-    border: 0.5px solid #00d2dc;
-    border-radius: 30px;
-    background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0.9),
-      rgba(0, 210, 220, 0.3)
-    );
-  }
-  // .grade-1:hover {
-  //   box-shadow: 0px 10px 10px 0px rgba(100,200,255,0.1);
-  //   transition: all 0.3s linear;
-  //   top: -20px;
-  //   position: relative;
-  //   cursor: pointer;
-  // }
-  .grade-2 {
-    border: 0.5px solid #00d2dc;
-    border-radius: 30px;
-    background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0.9),
-      rgba(0, 210, 220, 0.3)
-    );
-  }
-  // .grade-2:hover {
-  //   box-shadow: 0px 10px 10px 0px rgba(100,200,255,0.1);
-  //   transition: all 0.3s linear;
-  //   top: -20px;
-  //   position: relative;
-  //   cursor: pointer;
-  // }
-  .grade-3 {
-    border: 0.5px solid #00d2dc;
-    border-radius: 30px;
-    background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0.9),
-      rgba(0, 210, 220, 0.3)
-    );
-  }
-  // .grade-3:hover {
-  //   box-shadow: 0px 10px 10px 0px rgba(100,200,255,0.1);
-  //   transition: all 0.3s linear;
-  //   top: -20px;
-  //   position: relative;
-  //   cursor: pointer;
-  // }
-  .grade-card {
-    text-align: center;
-    padding: 50px 20px;
-    h5 {
-      font-size: 24px;
-      font-weight: 500 ;
-    }
-    p {
-      color: grey;
-      line-height: 30px;
-    }
-    img {
-      width: 100px;
-      display: block;
-      margin: auto;
-    }
-  }
-}
-.gallery {
-  max-width: 1220px;
-  margin: auto;
-  margin-bottom: 30px;
-  .gallery-images {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 20px;
-    .gallery-image {
-      img {
-        width: 100%;
-      }
-    }
-  }
-}
-</style>
-
-
-<style scoped>
-@media screen and (max-width: 768px){
-  .reason {
-    padding: 20px;
-    flex-direction: column;
-  }
-  .reason-right {
-    margin-top: 20px;
-  }
-  .school-grade {
-    padding: 20px;
-    grid-template-columns: 1fr;
-  }
-  .grade-card {
-    margin-top: 20px;
-  }
-}
-</style>
+<style lang="scss" scoped src="./Home.scss"></style>
